@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
@@ -21,7 +21,9 @@ export default function Header() {
     <View style={styles.header}>
       <View style={styles.logo}>
         <FontAwesome name="globe" size={20} color="#fff" />
+        <TouchableOpacity onPress={() => Linking.openURL('https://antoniomelli.kesug.com/?i=1')}>
         <Text style={styles.logoText}>Antonio Melli</Text>
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
