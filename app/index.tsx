@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps } from '@react-navigation/drawer';
 import HomeScreen from '../screens/Home';
+import SobremimScreen from '../screens/Sobremim';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,7 +49,7 @@ export default function App() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="Inicio" component={HomeScreen} />
-      <Drawer.Screen name="Sobre mim" component={HomeScreen} />
+      <Drawer.Screen name="Sobre mim" component={SobremimScreen} />
       <Drawer.Screen name="Experiencia" component={HomeScreen} />
       <Drawer.Screen name="Projetos" component={HomeScreen} />
       <Drawer.Screen name="Contato" component={HomeScreen} />

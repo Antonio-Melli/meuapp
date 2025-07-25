@@ -6,7 +6,7 @@ import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 // 👇 Defina sua lista de rotas aqui (mesmo nome usado no App.tsx)
 type RootDrawerParamList = {
-  Home: undefined;
+  Inicio: undefined;
   Sobremim: undefined;
   Experiencia: undefined;
   Projetos: undefined;
