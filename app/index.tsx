@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps } from '@react-navigation/drawer';
 import HomeScreen from '../screens/Home';
 import SobremimScreen from '../screens/Sobremim';
+import Experiencia from '../screens/Experiencia';
+import Contato from '../screens/Contato';
+import Projetos from '../screens/Projetos';
 
 const Drawer = createDrawerNavigator();
 
@@ -10,7 +13,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
   const menuItems = [
     { label: 'Inicio', route: 'Inicio' },
     { label: 'Sobre mim', route: 'Sobre mim' },
-    { label: 'Experiência', route: 'Experiencia' },
+    { label: 'Experiencia', route: 'Experiencia' },
     { label: 'Projetos', route: 'Projetos' },
     { label: 'Contato', route: 'Contato' },
   ];
@@ -50,9 +53,9 @@ export default function App() {
     >
       <Drawer.Screen name="Inicio" component={HomeScreen} />
       <Drawer.Screen name="Sobre mim" component={SobremimScreen} />
-      <Drawer.Screen name="Experiencia" component={HomeScreen} />
-      <Drawer.Screen name="Projetos" component={HomeScreen} />
-      <Drawer.Screen name="Contato" component={HomeScreen} />
+      <Drawer.Screen name="Experiencia" component={Experiencia} />
+      <Drawer.Screen name="Projetos" component={Projetos} />
+      <Drawer.Screen name="Contato" component={Contato} />
     </Drawer.Navigator>
   );
 }

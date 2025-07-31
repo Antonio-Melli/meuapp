@@ -155,7 +155,7 @@ itemTexto: {
 },
  footer: {
   alignItems: 'center',
-  marginTop: 157,
+  marginTop: 172,
   paddingBottom: 20,
 },
 iconsRow: {

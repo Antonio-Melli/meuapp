@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   footer: {
   alignItems: 'center',
-  marginTop: 350,
+  marginTop: 365,
   paddingBottom: 20,
 },
 iconsRow: {
