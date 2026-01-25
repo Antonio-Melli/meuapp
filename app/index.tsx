@@ -43,7 +43,7 @@ export default function App() {
         headerShown: false,
         drawerPosition: 'right',
         drawerStyle: {
-          backgroundColor: '#0a192f', // fundo azul escuro parecido com o da imagem
+          backgroundColor: '#0a192f', 
           width: 250,
           marginTop: 116,
         },
