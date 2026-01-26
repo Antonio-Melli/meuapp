@@ -27,7 +27,7 @@ export default function Projetos() {
           Website criado para fins de portfólio e representação profissional.
         </Text>
         <View style={styles.techContainer}>
-          <Text style={styles.tech}>VS Code</Text>
+          <Text style={styles.tech}>Visual Studio</Text>
           <Text style={styles.tech}>React e TypeScript</Text>
         </View>
       </ImageBackground>
@@ -44,7 +44,7 @@ export default function Projetos() {
           Um site criado com os mínimos detalhes, pensado na interatividade e simplicidade para o usuário.
         </Text>
         <View style={styles.techContainer}>
-          <Text style={styles.tech}>VS Code</Text>
+          <Text style={styles.tech}>Visual Studio</Text>
           <Text style={styles.tech}>React e TypeScript</Text>
         </View>
       </ImageBackground>
@@ -79,7 +79,7 @@ export default function Projetos() {
         </TouchableOpacity>
     
         <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/antonio-melli-b1598926a/')}>
-        <AntDesign name="linkedin-square" size={24} color="#8892b0" style={styles.icon} />
+        <AntDesign name="linkedin" size={24} color="#8892b0" style={styles.icon} />
         </TouchableOpacity>
     
         <TouchableOpacity onPress={() => Linking.openURL('https://wa.me/551985967435')}>
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
     width: 320,
     padding: 13,
     borderRadius: 16,
-    marginTop: 20,
+     marginTop: 20,
+    marginBottom: 10,
     alignItems  : 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
@@ -156,7 +157,8 @@ const styles = StyleSheet.create({
   },
   footer: {
   alignItems: 'center',
-  marginTop: 40,
+      marginTop: 20,
+  marginBottom: 30,
   paddingBottom: 20,
 },
 iconsRow: {

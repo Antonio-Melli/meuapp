@@ -20,9 +20,9 @@ export default function SobreMim() {
       </Text>
 
       <Text style={styles.texto}>
-        Hoje, tenho me dedicado ao desenvolvimento de sites especializados e extensos com foco em acessibilidade,
-        usabilidade e performance. 
-        Meu stack atual inclui TypeScript, React, JavaScript e PHP.
+                  Hoje, tenho me dedicado ao desenvolvimento de sites especializados e extensos com
+                  foco em acessibilidade, usabilidade e performance. Meu stack atual inclui
+                  TypeScript, React, JavaScript, C# e PHP.
       </Text>
 
       <Text style={styles.texto}>
@@ -39,7 +39,7 @@ export default function SobreMim() {
 
           <View style={styles.linhaItem}>
   <Text style={styles.seta}>›</Text>
-  <Text style={styles.itemTexto}>CSS</Text>
+  <Text style={styles.itemTexto}>C#</Text>
 </View>
 
           <View style={styles.linhaItem}>
@@ -56,7 +56,7 @@ export default function SobreMim() {
 
           <View style={styles.linhaItem}>
   <Text style={styles.seta}>›</Text>
-  <Text style={styles.itemTexto}>HTML</Text>
+  <Text style={styles.itemTexto}>HTML/CSS</Text>
 </View>
 
           <View style={styles.linhaItem}>
@@ -90,7 +90,7 @@ export default function SobreMim() {
     </TouchableOpacity>
 
     <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/antonio-melli-b1598926a/')}>
-    <AntDesign name="linkedin-square" size={24} color="#8892b0" style={styles.icon} />
+    <AntDesign name="linkedin" size={24} color="#8892b0" style={styles.icon} />
     </TouchableOpacity>
 
     <TouchableOpacity onPress={() => Linking.openURL('https://wa.me/551985967435')}>
@@ -155,7 +155,7 @@ itemTexto: {
 },
  footer: {
   alignItems: 'center',
-  marginTop: 172,
+  marginTop: 83,
   paddingBottom: 20,
 },
 iconsRow: {

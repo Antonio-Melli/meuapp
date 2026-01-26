@@ -12,7 +12,7 @@ export default function Contato() {
         Entre em contato
       </Text>
 
-        <Text style={styles.itemTexto}>Estou em busca de novas oportunidades, mas minha caixa de entrada continua aberta. Se tiver dúvidas ou quiser apenas dizer oi, será um prazer responder.</Text>
+        <Text style={styles.itemTexto}>Estou em busca de novas oportunidades e minha caixa de entrada está aberta. Se tiver dúvidas, propostas ou quiser apenas dizer oi, será um prazer responder.</Text>
  
         <TouchableOpacity
           style={styles.customButton}
@@ -33,7 +33,7 @@ export default function Contato() {
         </TouchableOpacity>
     
         <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/antonio-melli-b1598926a/')}>
-        <AntDesign name="linkedin-square" size={24} color="#8892b0" style={styles.icon} />
+        <AntDesign name="linkedin" size={24} color="#8892b0" style={styles.icon} />
         </TouchableOpacity>
     
         <TouchableOpacity onPress={() => Linking.openURL('https://wa.me/551985967435')}>
@@ -90,7 +90,7 @@ buttonText: {
 },
   footer: {
   alignItems: 'center',
-  marginTop: 432,
+  marginTop: 350,
   paddingBottom: 20,
 },
 iconsRow: {
@@ -100,13 +100,13 @@ iconsRow: {
 },
 
 icon: {
-  marginHorizontal: 10,
+    marginHorizontal: 10,
+  marginBottom: 5,
 },
 
 footerText: {
   color: '#8892b0',
   fontSize: 14,
-  marginTop: 5,
   textAlign: 'center',
 },
 });

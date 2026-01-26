@@ -16,9 +16,11 @@ export default function Home() {
         <Text style={styles.subtitle}>Eu sou um desenvolvedor web.</Text>
 
         <Text style={styles.description}>
-          Sou estudante de Análise e Desenvolvimento de Sistemas, dedicado e focado em resultados.
-          Tenho 18 anos e trabalho com desenvolvimento web, utilizando HTML, CSS, JavaScript, React JS e TypeScript.
-          Tenho experiência em criar sites especializados e extensos, buscando sempre oferecer soluções eficientes e bem estruturadas.
+                  Sou estudante de Análise e Desenvolvimento de Sistemas, dedicado e focado em
+                  resultados. Tenho 19 anos e trabalho com desenvolvimento web, utilizando Node.JS,
+                  MySQL, C#, JavaScript, React JS/Native e TypeScript. Tenho experiência em criar
+                  sites especializados e extensos, buscando sempre oferecer soluções eficientes e
+                  bem estruturadas.
         </Text>
       </View>
       <View style={styles.footer}>
@@ -33,7 +35,7 @@ export default function Home() {
     </TouchableOpacity>
 
     <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/antonio-melli-b1598926a/')}>
-    <AntDesign name="linkedin-square" size={24} color="#8892b0" style={styles.icon} />
+    <AntDesign name="linkedin" size={24} color="#8892b0" style={styles.icon} />
     </TouchableOpacity>
 
     <TouchableOpacity onPress={() => Linking.openURL('https://wa.me/551985967435')}>
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
   },
   footer: {
   alignItems: 'center',
-  marginTop: 365,
-  paddingBottom: 20,
+  marginTop: 300,
+  paddingBottom: 50,
 },
 iconsRow: {
   flexDirection: 'row',
@@ -73,7 +75,7 @@ iconsRow: {
 },
 
 icon: {
-  marginHorizontal: 10,
+    marginHorizontal: 10,
 },
 
 footerText: {

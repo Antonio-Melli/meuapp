@@ -9,7 +9,7 @@ export default function Experiencia() {
       nome: 'Mundial Informática',
       url: 'https://www.mundialinformatica.com.br/',
       cargo: 'Suporte Técnico',
-      periodo: 'Agosto 2025 - Atual',
+      periodo: 'Agosto 2025 - Outubro 2025',
       descricao: [
         'Atendimento técnico especializado a clientes de médio e grande porte.',
         'Elaboração de relatórios técnicos e sugestões de melhorias para processos internos.',
@@ -84,7 +84,7 @@ export default function Experiencia() {
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/antonio-melli-b1598926a/')}>
-              <AntDesign name="linkedin-square" size={24} color="#8892b0" style={styles.icon} />
+              <AntDesign name="linkedin" size={24} color="#8892b0" style={styles.icon} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => Linking.openURL('https://wa.me/551985967435')}>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     alignItems: 'center',
-    marginTop: 330,
+    marginTop: 310,
     paddingBottom: 20,
   },
   iconsRow: {
