@@ -1,70 +1,115 @@
 import { FontAwesome, AntDesign } from '@expo/vector-icons';
-import { View, Text, StyleSheet, Linking, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Linking, TouchableOpacity, ImageBackground, Animated } from 'react-native';
 import Header from '../assets/components/cabecalho';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useFocusEffect } from '@react-navigation/native';
+import React, { useRef, useCallback } from 'react';
 
 export default function Projetos() {
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    const runFadeIn = useCallback((duration = 1200) => {
+        fadeAnim.setValue(0);
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration,
+            useNativeDriver: true,
+        }).start();
+    }, [fadeAnim]);
+
+    useFocusEffect(
+        useCallback(() => {
+            runFadeIn();
+
+            return () => {
+                fadeAnim.setValue(0);
+            };
+        }, [runFadeIn, fadeAnim])
+    );
   return (
     <ScrollView style={styles.container}>
         <Header />
         <View style={styles.content}>
-            
+              <Animated.View
+                  style={[
+                      styles.fadingContainer,
+                      {
+                          // Bind opacity to animated value
+                          opacity: fadeAnim,
+                      },
+                  ]}>
       <Text style={styles.titulo}>
         <Text style={styles.numero}>03. </Text>
         Alguns de meus projetos
-      </Text>
+                  </Text>
+                  <View style={styles.projetosContainer}>
+                      <TouchableOpacity onPress={() => Linking.openURL('https://www.antoniomelli.kesug.com')}>
+                          <ImageBackground
+                              source={require('./projetosimg/imagem4.png')}
+                              style={styles.card}
+                              imageStyle={{ borderRadius: 16, opacity: 0.3, }}
+                          >
+                              <Text style={styles.subTitle}>Projeto em destaque</Text>
+                              <Text style={styles.title}>Antonio Melli Website</Text>
+                              <Text style={styles.description}>
+                                  Website criado para fins de portfólio e representação profissional.
+                              </Text>
+                              <View style={styles.techContainer}>
+                                  <Text style={styles.tech}>Visual Studio</Text>
+                                  <Text style={styles.tech}>React & TypeScript</Text>
+                              </View>
+                          </ImageBackground>
+                      </TouchableOpacity>
 
-<View style={styles.projetosContainer}>
-    <TouchableOpacity onPress={() => Linking.openURL('https://www.antoniomelli.kesug.com')}>
-        <ImageBackground
-        source={require('./projetosimg/imagem4.png')}
-        style={styles.card}
-        imageStyle={{ borderRadius: 16,   opacity: 0.3, }}
-      >
-        <Text style={styles.subTitle}>Projeto em destaque</Text>
-        <Text style={styles.title}>Antonio Melli Website</Text>
-        <Text style={styles.description}>
-          Website criado para fins de portfólio e representação profissional.
-        </Text>
-        <View style={styles.techContainer}>
-          <Text style={styles.tech}>Visual Studio</Text>
-          <Text style={styles.tech}>React e TypeScript</Text>
-        </View>
-      </ImageBackground>
-      </TouchableOpacity>
+                      <ImageBackground
+                          source={require('./projetosimg/imagem5.png')}
+                          style={styles.card}
+                          imageStyle={{ borderRadius: 16, opacity: 0.3, }}
+                      >
+                          <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
+                          <Text style={styles.title}>Antonio Melli App</Text>
+                          <Text style={styles.description}>
+                              Aplicativo criado para fins de portfólio e representação profissional.
+                          </Text>
+                          <View style={styles.techContainer}>
+                              <Text style={styles.tech}>Visual Studio</Text>
+                              <Text style={styles.tech}>React Native & Expo</Text>
+                          </View>
+                      </ImageBackground>
 
-             <ImageBackground
-        source={require('./projetosimg/imagem.png')}
-        style={styles.card}
-        imageStyle={{ borderRadius: 16,   opacity: 0.3, }}
-      >
-        <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
-        <Text style={styles.title}>LightBuss Games Website</Text>
-        <Text style={styles.description}>
-          Um site criado com os mínimos detalhes, pensado na interatividade e simplicidade para o usuário.
-        </Text>
-        <View style={styles.techContainer}>
-          <Text style={styles.tech}>Visual Studio</Text>
-          <Text style={styles.tech}>React e TypeScript</Text>
-        </View>
-      </ImageBackground>
+                      <ImageBackground
+                          source={require('./projetosimg/imagem.png')}
+                          style={styles.card}
+                          imageStyle={{ borderRadius: 16, opacity: 0.3, }}
+                      >
+                          <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
+                          <Text style={styles.title}>LightBuss Games Website</Text>
+                          <Text style={styles.description}>
+                              Um site criado com os mínimos detalhes, pensado na interatividade e simplicidade para o usuário.
+                          </Text>
+                          <View style={styles.techContainer}>
+                              <Text style={styles.tech}>Visual Studio</Text>
+                              <Text style={styles.tech}>React & TypeScript</Text>
+                          </View>
+                      </ImageBackground>
 
-             <ImageBackground
-        source={require('./projetosimg/imagem3.png')}
-        style={styles.card}
-        imageStyle={{ borderRadius: 16,   opacity: 0.3, }}
-      >
-        <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
-        <Text style={styles.title}>The Big Heist</Text>
-        <Text style={styles.description}>
-          Jogo de mundo aberto 2D, desenvolvido em JavaScript e inspirado na era clássica de GTA.
-        </Text>
-        <View style={styles.techContainer}>
-          <Text style={styles.tech}>JavaScript</Text>
-          <Text style={styles.tech}>GameMaker Language</Text>
-        </View>
-      </ImageBackground>
-      </View>
+                      <ImageBackground
+                          source={require('./projetosimg/imagem3.png')}
+                          style={styles.card}
+                          imageStyle={{ borderRadius: 16, opacity: 0.3, }}
+                      >
+                          <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
+                          <Text style={styles.title}>The Big Heist</Text>
+                          <Text style={styles.description}>
+                              Jogo de mundo aberto 2D, desenvolvido em JavaScript e inspirado na era clássica de GTA.
+                          </Text>
+                          <View style={styles.techContainer}>
+                              <Text style={styles.tech}>JavaScript</Text>
+                              <Text style={styles.tech}>GameMaker Language</Text>
+                          </View>
+                      </ImageBackground>
+                  </View>
+      </Animated.View>
 
 
              <View style={styles.footer}>
@@ -176,5 +221,8 @@ footerText: {
   fontSize: 14,
   marginTop: 5,
   textAlign: 'center',
-},
+    },
+    fadingContainer: {
+        backgroundColor: '#0a192f',
+    },
 });

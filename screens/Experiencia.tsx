@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import React, { useRef, useCallback, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Animated } from 'react-native';
 import { FontAwesome, AntDesign } from '@expo/vector-icons';
 import Header from '../assets/components/cabecalho';
+import { useFocusEffect } from '@react-navigation/native';
 
 export default function Experiencia() {
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    const runFadeIn = useCallback((duration = 1200) => {
+        fadeAnim.setValue(0);
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration,
+            useNativeDriver: true,
+        }).start();
+    }, [fadeAnim]);
+
+    useFocusEffect(
+        useCallback(() => {
+            runFadeIn();
+
+            return () => {
+                fadeAnim.setValue(0);
+            };
+        }, [runFadeIn, fadeAnim])
+    );
+
   const experiencias = [
         {
       nome: 'Mundial Informática',
@@ -34,44 +56,51 @@ export default function Experiencia() {
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-        <Text style={styles.titulo}>
-          <Text style={styles.numero}>02. </Text>
-          Onde Trabalhei
-        </Text>
+                  <Animated.View
+                      style={[
+                          styles.fadingContainer,
+                          {
+                              // Bind opacity to animated value
+                              opacity: fadeAnim,
+                          },
+                  ]}>
+                  <Text style={styles.titulo}>
+                      <Text style={styles.numero}>02.</Text> Onde trabalhei
+                  </Text>
+                  <View style={styles.botoesEmpresa}>
+                      {experiencias.map((empresa, index) => (
+                          <TouchableOpacity
+                              key={index}
+                              style={[
+                                  styles.empresaLink,
+                                  empresaSelecionada === index && styles.empresaSelecionada,
+                              ]}
+                              onPress={() => setEmpresaSelecionada(index)}
+                          >
+                              <Text style={styles.empresaTexto}>{empresa.nome}</Text>
+                          </TouchableOpacity>
+                      ))}
+                  </View>
 
-        <View style={styles.botoesEmpresa}>
-          {experiencias.map((empresa, index) => (
-            <TouchableOpacity
-              key={index}
-              style={[
-                styles.empresaLink,
-                empresaSelecionada === index && styles.empresaSelecionada,
-              ]}
-              onPress={() => setEmpresaSelecionada(index)}
-            >
-              <Text style={styles.empresaTexto}>{empresa.nome}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+                  <View style={styles.card}>
+                      <Text style={styles.cargo} onPress={() => Linking.openURL(experiencia.url)}>
+                          {experiencia.cargo} <Text style={styles.empresa}>@{experiencia.nome}</Text>
+                      </Text>
 
-        <View style={styles.card}>
-          <Text style={styles.cargo} onPress={() => Linking.openURL(experiencia.url)}>
-            {experiencia.cargo} <Text style={styles.empresa}>@{experiencia.nome}</Text>
-          </Text>
+                      <Text style={styles.periodo}>{experiencia.periodo}</Text>
 
-          <Text style={styles.periodo}>{experiencia.periodo}</Text>
-
-          <View style={styles.listaHabilidades}>
-            <View style={styles.coluna}>
-              {experiencia.descricao.map((item, i) => (
-                <View key={i} style={styles.linhaItem}>
-                  <Text style={styles.seta}>›</Text>
-                  <Text style={styles.itemTexto}>{item}</Text>
-                </View>
-              ))}
-            </View>
-          </View>
-        </View>
+                      <View style={styles.listaHabilidades}>
+                          <View style={styles.coluna}>
+                              {experiencia.descricao.map((item, i) => (
+                                  <View key={i} style={styles.linhaItem}>
+                                      <Text style={styles.seta}>›</Text>
+                                      <Text style={styles.itemTexto}>{item}</Text>
+                                  </View>
+                              ))}
+                          </View>
+                      </View>
+                  </View>
+                  </Animated.View>
 
         <View style={styles.footer}>
           <View style={styles.iconsRow}>
@@ -112,11 +141,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#ccd6f6',
-    marginBottom: 12,
+      marginBottom: 12,
   },
   numero: {
     color: '#4aa5f0',
-    fontWeight: 'bold',
+      fontWeight: 'bold',
   },
   botoesEmpresa: {
     flexDirection: 'row',
@@ -198,5 +227,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 5,
     textAlign: 'center',
-  },
+    },
+    fadingContainer: {
+        backgroundColor: '#0a192f',
+    },
 });
