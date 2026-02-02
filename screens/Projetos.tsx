@@ -61,12 +61,13 @@ export default function Projetos() {
                           </ImageBackground>
                       </TouchableOpacity>
 
+                      <TouchableOpacity onPress={() => Linking.openURL('https://www.antoniomelli.kesug.com')}>
                       <ImageBackground
                           source={require('./projetosimg/imagem5.png')}
                           style={styles.card}
                           imageStyle={{ borderRadius: 16, opacity: 0.3, }}
                       >
-                          <Text style={styles.subTitle}>Projeto em desenvolvimento</Text>
+                          <Text style={styles.subTitle}>Projeto em destaque</Text>
                           <Text style={styles.title}>Antonio Melli App</Text>
                           <Text style={styles.description}>
                               Aplicativo criado para fins de portfólio e representação profissional.
@@ -75,7 +76,8 @@ export default function Projetos() {
                               <Text style={styles.tech}>Visual Studio</Text>
                               <Text style={styles.tech}>React Native & Expo</Text>
                           </View>
-                      </ImageBackground>
+                          </ImageBackground>
+                      </TouchableOpacity>
 
                       <ImageBackground
                           source={require('./projetosimg/imagem.png')}

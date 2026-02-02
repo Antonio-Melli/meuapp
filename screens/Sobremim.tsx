@@ -42,7 +42,7 @@ export default function SobreMim() {
                   </Text>
                   <Text style={styles.texto}>
                       Olá! Meu nome é Antonio e eu adoro criar soluções que vivem na internet.
-                      Sou estudante de Análise e Desenvolvimento de Sistemas e comecei a desenvolver web ainda bem jovem,
+                      Sou estudante de Análise e Desenvolvimento de Sistemas e comecei a desenvolver sistemas ainda bem jovem,
                       descobri que criar sites personalizados é uma forma incrível de aprender lógica e criatividade.
                   </Text>
 
@@ -182,7 +182,7 @@ itemTexto: {
 },
  footer: {
   alignItems: 'center',
-  marginTop: 83,
+  marginTop: 63,
   paddingBottom: 20,
 },
 iconsRow: {

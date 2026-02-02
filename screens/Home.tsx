@@ -143,7 +143,7 @@ export default function Home() {
 
                 <Animated.Text style={[styles.description, { opacity: descriptionOpacity }]}>
                     Sou estudante de Análise e Desenvolvimento de Sistemas, dedicado e focado em
-                    resultados. Tenho 19 anos e trabalho com desenvolvimento web, utilizando Node.JS,
+                    resultados. Tenho 19 anos e trabalho com desenvolvimento de sistemas, utilizando Node.JS,
                     MySQL, C#, JavaScript, React JS/Native e TypeScript. Tenho experiência em criar
                     sites especializados e extensos, buscando sempre oferecer soluções eficientes e
                     bem estruturadas.
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         alignItems: 'center',
-        marginTop: 301,
+        marginTop: 261,
         paddingBottom: 50,
     },
     iconsRow: {
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
         marginBottom: 8,
     },
     subtitle: {
-        fontSize: 19,
+        fontSize: 18,
         color: '#5e97c5',
         marginBottom: 24,
     },

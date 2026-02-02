@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 5,
   },
   coluna: {
     flex: 1,
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     alignItems: 'center',
-    marginTop: 310,
+    marginTop: 305,
     paddingBottom: 20,
   },
   iconsRow: {
